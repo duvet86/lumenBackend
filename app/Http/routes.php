@@ -20,6 +20,7 @@ $app->post('api/login', 'AuthController@postLogin');
 $app->group(['middleware' => 'auth:api', 'prefix' => 'api', 'namespace' => 'App\Http\Controllers'], function($app) {  
     
     $app->get('user', 'AuthController@getUserInfo');
+    $app->get('validateToken', 'AuthController@getValidateToken');
     
     $app->get('article','ArticleController@index');
     $app->get('article/{id}','ArticleController@getArticle');
